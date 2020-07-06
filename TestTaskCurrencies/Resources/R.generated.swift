@@ -145,10 +145,20 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  /// This `R.nib` struct is generated, and contains static references to 2 nibs.
   struct nib {
+    /// Nib `ItemCurrencyTableViewCell`.
+    static let itemCurrencyTableViewCell = _R.nib._ItemCurrencyTableViewCell()
     /// Nib `MainViewController`.
     static let mainViewController = _R.nib._MainViewController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "ItemCurrencyTableViewCell", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.itemCurrencyTableViewCell) instead")
+    static func itemCurrencyTableViewCell(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.itemCurrencyTableViewCell)
+    }
+    #endif
 
     #if os(iOS) || os(tvOS)
     /// `UINib(name: "MainViewController", in: bundle)`
@@ -158,9 +168,21 @@ struct R: Rswift.Validatable {
     }
     #endif
 
+    static func itemCurrencyTableViewCell(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ItemCurrencyTableViewCell? {
+      return R.nib.itemCurrencyTableViewCell.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ItemCurrencyTableViewCell
+    }
+
     static func mainViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
       return R.nib.mainViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
     }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.reuseIdentifier` struct is generated, and contains static references to 1 reuse identifiers.
+  struct reuseIdentifier {
+    /// Reuse identifier `ItemCurrencyTableViewCell`.
+    static let itemCurrencyTableViewCell: Rswift.ReuseIdentifier<ItemCurrencyTableViewCell> = Rswift.ReuseIdentifier(identifier: "ItemCurrencyTableViewCell")
 
     fileprivate init() {}
   }
@@ -273,6 +295,20 @@ struct _R: Rswift.Validatable {
 
   #if os(iOS) || os(tvOS)
   struct nib {
+    struct _ItemCurrencyTableViewCell: Rswift.NibResourceType, Rswift.ReuseIdentifierType {
+      typealias ReusableType = ItemCurrencyTableViewCell
+
+      let bundle = R.hostingBundle
+      let identifier = "ItemCurrencyTableViewCell"
+      let name = "ItemCurrencyTableViewCell"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> ItemCurrencyTableViewCell? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? ItemCurrencyTableViewCell
+      }
+
+      fileprivate init() {}
+    }
+
     struct _MainViewController: Rswift.NibResourceType {
       let bundle = R.hostingBundle
       let name = "MainViewController"

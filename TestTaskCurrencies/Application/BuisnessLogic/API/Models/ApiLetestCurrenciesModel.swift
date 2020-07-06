@@ -9,6 +9,6 @@ extension ApiLetestCurrenciesModel: DomainConvertible {
     
     func asDomain() -> LetestCurrencies {
         return LetestCurrencies(base: base,
-                                   rates: rates)
+                                rates: rates)
     }
 }
