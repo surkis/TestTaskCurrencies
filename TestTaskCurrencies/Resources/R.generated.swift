@@ -93,8 +93,8 @@ struct R: Rswift.Validatable {
   struct storyboard {
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
-    /// Storyboard `Main`.
-    static let main = _R.storyboard.main()
+    /// Storyboard `Navigation`.
+    static let navigation = _R.storyboard.navigation()
 
     #if os(iOS) || os(tvOS)
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
@@ -104,9 +104,9 @@ struct R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    /// `UIStoryboard(name: "Main", bundle: ...)`
-    static func main(_: Void = ()) -> UIKit.UIStoryboard {
-      return UIKit.UIStoryboard(resource: R.storyboard.main)
+    /// `UIStoryboard(name: "Navigation", bundle: ...)`
+    static func navigation(_: Void = ()) -> UIKit.UIStoryboard {
+      return UIKit.UIStoryboard(resource: R.storyboard.navigation)
     }
     #endif
 
@@ -128,7 +128,7 @@ struct R: Rswift.Validatable {
             static let _key = "Default Configuration"
             static let uiSceneConfigurationName = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneConfigurationName") ?? "Default Configuration"
             static let uiSceneDelegateClassName = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneDelegateClassName") ?? "$(PRODUCT_MODULE_NAME).SceneDelegate"
-            static let uiSceneStoryboardFile = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneStoryboardFile") ?? "Main"
+            static let uiSceneStoryboardFile = infoPlistString(path: ["UIApplicationSceneManifest", "UISceneConfigurations", "UIWindowSceneSessionRoleApplication", "Default Configuration"], key: "UISceneStoryboardFile") ?? "LaunchScreen"
 
             fileprivate init() {}
           }
@@ -137,6 +137,67 @@ struct R: Rswift.Validatable {
         }
 
         fileprivate init() {}
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.nib` struct is generated, and contains static references to 1 nibs.
+  struct nib {
+    /// Nib `MainViewController`.
+    static let mainViewController = _R.nib._MainViewController()
+
+    #if os(iOS) || os(tvOS)
+    /// `UINib(name: "MainViewController", in: bundle)`
+    @available(*, deprecated, message: "Use UINib(resource: R.nib.mainViewController) instead")
+    static func mainViewController(_: Void = ()) -> UIKit.UINib {
+      return UIKit.UINib(resource: R.nib.mainViewController)
+    }
+    #endif
+
+    static func mainViewController(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+      return R.nib.mainViewController.instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+    }
+
+    fileprivate init() {}
+  }
+
+  /// This `R.string` struct is generated, and contains static references to 1 localization tables.
+  struct string {
+    /// This `R.string.localizable` struct is generated, and contains static references to 2 localization keys.
+    struct localizable {
+      /// Value: Error
+      static let alert_error_title = Rswift.StringResource(key: "alert_error_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: OK
+      static let alert_button_ok = Rswift.StringResource(key: "alert_button_ok", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: Error
+      static func alert_error_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("alert_error_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "alert_error_title"
+        }
+
+        return NSLocalizedString("alert_error_title", bundle: bundle, comment: "")
+      }
+
+      /// Value: OK
+      static func alert_button_ok(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("alert_button_ok", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "alert_button_ok"
+        }
+
+        return NSLocalizedString("alert_button_ok", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}
@@ -166,13 +227,30 @@ struct _R: Rswift.Validatable {
   }
 
   #if os(iOS) || os(tvOS)
+  struct nib {
+    struct _MainViewController: Rswift.NibResourceType {
+      let bundle = R.hostingBundle
+      let name = "MainViewController"
+
+      func firstView(owner ownerOrNil: AnyObject?, options optionsOrNil: [UINib.OptionsKey : Any]? = nil) -> UIKit.UIView? {
+        return instantiate(withOwner: ownerOrNil, options: optionsOrNil)[0] as? UIKit.UIView
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+  #endif
+
+  #if os(iOS) || os(tvOS)
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
       #if os(iOS) || os(tvOS)
       try launchScreen.validate()
       #endif
       #if os(iOS) || os(tvOS)
-      try main.validate()
+      try navigation.validate()
       #endif
     }
 
@@ -193,11 +271,11 @@ struct _R: Rswift.Validatable {
     #endif
 
     #if os(iOS) || os(tvOS)
-    struct main: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
-      typealias InitialController = ViewController
+    struct navigation: Rswift.StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = UIKit.UINavigationController
 
       let bundle = R.hostingBundle
-      let name = "Main"
+      let name = "Navigation"
 
       static func validate() throws {
         if #available(iOS 11.0, tvOS 11.0, *) {
