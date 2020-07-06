@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -13,6 +13,7 @@
 		14C3B75924B346CF004B6959 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3B75724B346CF004B6959 /* Main.storyboard */; };
 		14C3B75B24B346D5004B6959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C3B75A24B346D5004B6959 /* Assets.xcassets */; };
 		14C3B75E24B346D5004B6959 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14C3B75C24B346D5004B6959 /* LaunchScreen.storyboard */; };
+		14C3B76E24B34D22004B6959 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3B76D24B34D22004B6959 /* R.generated.swift */; };
 		2446BFEC72AD49DF309167E7 /* Pods_TestTaskCurrencies.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2FBCDF726402B70F4E78979 /* Pods_TestTaskCurrencies.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +26,7 @@
 		14C3B75A24B346D5004B6959 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14C3B75D24B346D5004B6959 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14C3B75F24B346D5004B6959 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14C3B76D24B34D22004B6959 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		16FA72724878E5E0E6EAA2CF /* Pods-TestTaskCurrencies.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskCurrencies.release.xcconfig"; path = "Target Support Files/Pods-TestTaskCurrencies/Pods-TestTaskCurrencies.release.xcconfig"; sourceTree = "<group>"; };
 		A2FBCDF726402B70F4E78979 /* Pods_TestTaskCurrencies.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TestTaskCurrencies.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C83A337D511A162578EF9C7C /* Pods-TestTaskCurrencies.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestTaskCurrencies.debug.xcconfig"; path = "Target Support Files/Pods-TestTaskCurrencies/Pods-TestTaskCurrencies.debug.xcconfig"; sourceTree = "<group>"; };
@@ -63,15 +65,64 @@
 		14C3B75024B346CF004B6959 /* TestTaskCurrencies */ = {
 			isa = PBXGroup;
 			children = (
-				14C3B75124B346CF004B6959 /* AppDelegate.swift */,
+				14C3B76724B34C7D004B6959 /* Application */,
+				14C3B76924B34C97004B6959 /* Resources */,
+			);
+			path = TestTaskCurrencies;
+			sourceTree = "<group>";
+		};
+		14C3B76724B34C7D004B6959 /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				14C3B76824B34C85004B6959 /* App */,
+				14C3B76A24B34CAD004B6959 /* Scenes */,
+				14C3B76C24B34CC6004B6959 /* BuisnessLogic */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		14C3B76824B34C85004B6959 /* App */ = {
+			isa = PBXGroup;
+			children = (
 				14C3B75324B346CF004B6959 /* SceneDelegate.swift */,
-				14C3B75524B346CF004B6959 /* ViewController.swift */,
-				14C3B75724B346CF004B6959 /* Main.storyboard */,
+				14C3B75124B346CF004B6959 /* AppDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		14C3B76924B34C97004B6959 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				14C3B76D24B34D22004B6959 /* R.generated.swift */,
 				14C3B75A24B346D5004B6959 /* Assets.xcassets */,
 				14C3B75C24B346D5004B6959 /* LaunchScreen.storyboard */,
 				14C3B75F24B346D5004B6959 /* Info.plist */,
 			);
-			path = TestTaskCurrencies;
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		14C3B76A24B34CAD004B6959 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				14C3B76B24B34CB6004B6959 /* Main */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		14C3B76B24B34CB6004B6959 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				14C3B75524B346CF004B6959 /* ViewController.swift */,
+				14C3B75724B346CF004B6959 /* Main.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		14C3B76C24B34CC6004B6959 /* BuisnessLogic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = BuisnessLogic;
 			sourceTree = "<group>";
 		};
 		86DD3850503D9DB129F9DCDE /* Frameworks */ = {
@@ -88,7 +139,6 @@
 				C83A337D511A162578EF9C7C /* Pods-TestTaskCurrencies.debug.xcconfig */,
 				16FA72724878E5E0E6EAA2CF /* Pods-TestTaskCurrencies.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -100,9 +150,12 @@
 			buildConfigurationList = 14C3B76224B346D5004B6959 /* Build configuration list for PBXNativeTarget "TestTaskCurrencies" */;
 			buildPhases = (
 				8E03AD75B0E389B9B45C83F3 /* [CP] Check Pods Manifest.lock */,
+				14C3B76524B34C08004B6959 /* R Generated */,
+				14C3B76624B34C57004B6959 /* SwiftLint */,
 				14C3B74A24B346CF004B6959 /* Sources */,
 				14C3B74B24B346CF004B6959 /* Frameworks */,
 				14C3B74C24B346CF004B6959 /* Resources */,
+				C226F83897864B463B311935 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -160,6 +213,44 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		14C3B76524B34C08004B6959 /* R Generated */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = "R Generated";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/TestTaskCurrencies/Resources/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"$PODS_ROOT/R.swift/rswift\" generate \"$SRCROOT/TestTaskCurrencies/Resources/R.generated.swift\"\n";
+		};
+		14C3B76624B34C57004B6959 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\" --config \"$SRCROOT/.swiftlint.yml\"\n";
+		};
 		8E03AD75B0E389B9B45C83F3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -182,6 +273,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C226F83897864B463B311935 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestTaskCurrencies/Pods-TestTaskCurrencies-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TestTaskCurrencies/Pods-TestTaskCurrencies-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TestTaskCurrencies/Pods-TestTaskCurrencies-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -192,6 +300,7 @@
 				14C3B75624B346CF004B6959 /* ViewController.swift in Sources */,
 				14C3B75224B346CF004B6959 /* AppDelegate.swift in Sources */,
 				14C3B75424B346CF004B6959 /* SceneDelegate.swift in Sources */,
+				14C3B76E24B34D22004B6959 /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,7 +447,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 37APR7NT5C;
-				INFOPLIST_FILE = TestTaskCurrencies/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TestTaskCurrencies/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -346,7 +456,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.TestTaskCurrencies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -357,7 +467,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 37APR7NT5C;
-				INFOPLIST_FILE = TestTaskCurrencies/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/TestTaskCurrencies/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -365,7 +476,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.TestTaskCurrencies;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -5,6 +5,8 @@ inhibit_all_warnings!
 
 target 'TestTaskCurrencies' do
     
+    pod 'SwiftLint'
+    pod 'R.swift'
     
 end
 
