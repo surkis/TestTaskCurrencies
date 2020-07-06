@@ -13,7 +13,7 @@ excluded:
   - TestTaskCurrencies/Resources/R.generated.swift
 
 line_length:
-  warning: 120
+  warning: 140
   ignores_comments: true
   
 type_body_length:
