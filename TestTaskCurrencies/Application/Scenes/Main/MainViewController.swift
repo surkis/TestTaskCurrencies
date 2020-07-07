@@ -2,6 +2,7 @@ import UIKit
 
 protocol MainView: BasicView, ErrorAlertViewProtocol {
     func displayUpdateContent()
+    func displayPage(title: String)
 }
 
 class MainViewController: UIViewController, MainView {
@@ -15,6 +16,7 @@ class MainViewController: UIViewController, MainView {
     // MARK: life-cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUIContent()
         presenter.needLoadContent()
     }
     
@@ -35,6 +37,10 @@ class MainViewController: UIViewController, MainView {
     // MARK: display methods
     func displayUpdateContent() {
         tableView.reloadData()
+    }
+    
+    func displayPage(title: String) {
+        self.title = title
     }
 }
 

@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1407AC7524B497CB00A2D2D9 /* RateCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407AC7424B497CB00A2D2D9 /* RateCurrency.swift */; };
+		1407AC7B24B49CEE00A2D2D9 /* Double+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407AC7A24B49CEE00A2D2D9 /* Double+Extension.swift */; };
+		1407AC7E24B49D7600A2D2D9 /* CurrencyFormatManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407AC7D24B49D7600A2D2D9 /* CurrencyFormatManager.swift */; };
+		1407AC8424B4A48C00A2D2D9 /* StorageRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407AC8324B4A48C00A2D2D9 /* StorageRepositoryProtocol.swift */; };
+		1407AC8624B4A4D200A2D2D9 /* RealmDefaultConfigProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407AC8524B4A4D200A2D2D9 /* RealmDefaultConfigProtocol.swift */; };
+		1407AC8924B4A58300A2D2D9 /* RealmRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407AC8824B4A58300A2D2D9 /* RealmRepository.swift */; };
+		1407AC8B24B4A5A000A2D2D9 /* StorageRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407AC8A24B4A5A000A2D2D9 /* StorageRepresentable.swift */; };
+		1407AC8E24B4A66800A2D2D9 /* StorageError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407AC8D24B4A66800A2D2D9 /* StorageError.swift */; };
+		1407AC9124B4A70500A2D2D9 /* SortDescriptor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407AC9024B4A70500A2D2D9 /* SortDescriptor+Extension.swift */; };
+		1407AC9424B4A8BE00A2D2D9 /* StorageLetestCurrenciesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407AC9324B4A8BE00A2D2D9 /* StorageLetestCurrenciesGateway.swift */; };
+		1407AC9724B4A9E600A2D2D9 /* StorageLetestCurrencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407AC9624B4A9E600A2D2D9 /* StorageLetestCurrencies.swift */; };
+		1407AC9924B4AA6F00A2D2D9 /* StorageRateCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407AC9824B4AA6F00A2D2D9 /* StorageRateCurrency.swift */; };
 		14C3B75224B346CF004B6959 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3B75124B346CF004B6959 /* AppDelegate.swift */; };
 		14C3B75424B346CF004B6959 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3B75324B346CF004B6959 /* SceneDelegate.swift */; };
 		14C3B75B24B346D5004B6959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C3B75A24B346D5004B6959 /* Assets.xcassets */; };
@@ -46,6 +58,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1407AC7424B497CB00A2D2D9 /* RateCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCurrency.swift; sourceTree = "<group>"; };
+		1407AC7A24B49CEE00A2D2D9 /* Double+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+Extension.swift"; sourceTree = "<group>"; };
+		1407AC7D24B49D7600A2D2D9 /* CurrencyFormatManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatManager.swift; sourceTree = "<group>"; };
+		1407AC8324B4A48C00A2D2D9 /* StorageRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRepositoryProtocol.swift; sourceTree = "<group>"; };
+		1407AC8524B4A4D200A2D2D9 /* RealmDefaultConfigProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RealmDefaultConfigProtocol.swift; path = TestTaskCurrencies/Application/BuisnessLogic/Storage/Repository/RealmDefaultConfigProtocol.swift; sourceTree = SOURCE_ROOT; };
+		1407AC8824B4A58300A2D2D9 /* RealmRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmRepository.swift; sourceTree = "<group>"; };
+		1407AC8A24B4A5A000A2D2D9 /* StorageRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRepresentable.swift; sourceTree = "<group>"; };
+		1407AC8D24B4A66800A2D2D9 /* StorageError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageError.swift; sourceTree = "<group>"; };
+		1407AC9024B4A70500A2D2D9 /* SortDescriptor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SortDescriptor+Extension.swift"; sourceTree = "<group>"; };
+		1407AC9324B4A8BE00A2D2D9 /* StorageLetestCurrenciesGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLetestCurrenciesGateway.swift; sourceTree = "<group>"; };
+		1407AC9624B4A9E600A2D2D9 /* StorageLetestCurrencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageLetestCurrencies.swift; sourceTree = "<group>"; };
+		1407AC9824B4AA6F00A2D2D9 /* StorageRateCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageRateCurrency.swift; sourceTree = "<group>"; };
 		14C3B74E24B346CF004B6959 /* TestTaskCurrencies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskCurrencies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C3B75124B346CF004B6959 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C3B75324B346CF004B6959 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -100,6 +124,94 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1407AC7624B499B700A2D2D9 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				1407AC8F24B4A6F700A2D2D9 /* Realm */,
+				1407AC7724B49AFF00A2D2D9 /* Standart */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		1407AC7724B49AFF00A2D2D9 /* Standart */ = {
+			isa = PBXGroup;
+			children = (
+				1407AC7A24B49CEE00A2D2D9 /* Double+Extension.swift */,
+			);
+			path = Standart;
+			sourceTree = "<group>";
+		};
+		1407AC7C24B49D4C00A2D2D9 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				1407AC7D24B49D7600A2D2D9 /* CurrencyFormatManager.swift */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		1407AC8124B4A46D00A2D2D9 /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				1407AC9524B4A9B100A2D2D9 /* Entities */,
+				1407AC9224B4A89B00A2D2D9 /* Gateways */,
+				1407AC8224B4A48300A2D2D9 /* Repository */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		1407AC8224B4A48300A2D2D9 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				1407AC8C24B4A65F00A2D2D9 /* Error */,
+				1407AC8724B4A57200A2D2D9 /* Realm */,
+				1407AC8324B4A48C00A2D2D9 /* StorageRepositoryProtocol.swift */,
+				1407AC8A24B4A5A000A2D2D9 /* StorageRepresentable.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		1407AC8724B4A57200A2D2D9 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				1407AC8524B4A4D200A2D2D9 /* RealmDefaultConfigProtocol.swift */,
+				1407AC8824B4A58300A2D2D9 /* RealmRepository.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		1407AC8C24B4A65F00A2D2D9 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				1407AC8D24B4A66800A2D2D9 /* StorageError.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
+		1407AC8F24B4A6F700A2D2D9 /* Realm */ = {
+			isa = PBXGroup;
+			children = (
+				1407AC9024B4A70500A2D2D9 /* SortDescriptor+Extension.swift */,
+			);
+			path = Realm;
+			sourceTree = "<group>";
+		};
+		1407AC9224B4A89B00A2D2D9 /* Gateways */ = {
+			isa = PBXGroup;
+			children = (
+				1407AC9324B4A8BE00A2D2D9 /* StorageLetestCurrenciesGateway.swift */,
+			);
+			path = Gateways;
+			sourceTree = "<group>";
+		};
+		1407AC9524B4A9B100A2D2D9 /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				1407AC9624B4A9E600A2D2D9 /* StorageLetestCurrencies.swift */,
+				1407AC9824B4AA6F00A2D2D9 /* StorageRateCurrency.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 		14C3B74524B346CF004B6959 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +234,7 @@
 			isa = PBXGroup;
 			children = (
 				14C3B76724B34C7D004B6959 /* Application */,
+				1407AC7624B499B700A2D2D9 /* Library */,
 				14C3B76924B34C97004B6959 /* Resources */,
 			);
 			path = TestTaskCurrencies;
@@ -185,6 +298,7 @@
 		14C3B76C24B34CC6004B6959 /* BuisnessLogic */ = {
 			isa = PBXGroup;
 			children = (
+				1407AC8124B4A46D00A2D2D9 /* Storage */,
 				14C3B7BB24B36A11004B6959 /* Base */,
 				14C3B79D24B35FEA004B6959 /* API */,
 				14C3B77924B3540D004B6959 /* Common */,
@@ -195,6 +309,7 @@
 		14C3B77924B3540D004B6959 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1407AC7C24B49D4C00A2D2D9 /* Managers */,
 				14C3B78D24B35785004B6959 /* Protocols */,
 			);
 			path = Common;
@@ -292,6 +407,7 @@
 			isa = PBXGroup;
 			children = (
 				14C3B7C824B36E05004B6959 /* LetestCurrencies.swift */,
+				1407AC7424B497CB00A2D2D9 /* RateCurrency.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -492,24 +608,36 @@
 				14C3B7C524B36D0D004B6959 /* DomainConvertible.swift in Sources */,
 				14C3B7AF24B363B6004B6959 /* ApiLatestCurrencyGateway.swift in Sources */,
 				14C3B7B924B3673A004B6959 /* ApiLetestCurrenciesModel.swift in Sources */,
+				1407AC9924B4AA6F00A2D2D9 /* StorageRateCurrency.swift in Sources */,
 				14C3B77E24B3550A004B6959 /* ErrorAlertViewProtocol.swift in Sources */,
+				1407AC7E24B49D7600A2D2D9 /* CurrencyFormatManager.swift in Sources */,
 				14C3B7C924B36E05004B6959 /* LetestCurrencies.swift in Sources */,
 				14C3B79824B358B8004B6959 /* BasicView.swift in Sources */,
 				14C3B78924B356A8004B6959 /* MainConfigurator.swift in Sources */,
+				1407AC9724B4A9E600A2D2D9 /* StorageLetestCurrencies.swift in Sources */,
 				14C3B79A24B35CB1004B6959 /* MainViewRouter.swift in Sources */,
+				1407AC9424B4A8BE00A2D2D9 /* StorageLetestCurrenciesGateway.swift in Sources */,
 				14C3B7AC24B362D3004B6959 /* ApiError.swift in Sources */,
 				14C3B77124B351A5004B6959 /* Application.swift in Sources */,
 				14C3B7CD24B372E8004B6959 /* ItemCurrencyTableViewCell.swift in Sources */,
+				1407AC8424B4A48C00A2D2D9 /* StorageRepositoryProtocol.swift in Sources */,
+				1407AC9124B4A70500A2D2D9 /* SortDescriptor+Extension.swift in Sources */,
 				14C3B7D224B3732D004B6959 /* ModelViewProtocol.swift in Sources */,
 				14C3B79324B357D4004B6959 /* PresenterProtocol.swift in Sources */,
 				14C3B7B424B365D8004B6959 /* Constants.swift in Sources */,
 				14C3B7B224B36540004B6959 /* LetestApiRequest.swift in Sources */,
+				1407AC8B24B4A5A000A2D2D9 /* StorageRepresentable.swift in Sources */,
 				14C3B7D024B37319004B6959 /* BaseViewCellProtocol.swift in Sources */,
 				14C3B7A224B36082004B6959 /* ApiClient.swift in Sources */,
+				1407AC8624B4A4D200A2D2D9 /* RealmDefaultConfigProtocol.swift in Sources */,
 				14C3B7A424B360AE004B6959 /* ApiRequest.swift in Sources */,
+				1407AC7B24B49CEE00A2D2D9 /* Double+Extension.swift in Sources */,
 				14C3B75224B346CF004B6959 /* AppDelegate.swift in Sources */,
 				14C3B7AA24B362B3004B6959 /* ApiResponse.swift in Sources */,
+				1407AC8924B4A58300A2D2D9 /* RealmRepository.swift in Sources */,
 				14C3B7A824B362A3004B6959 /* ApiDecodable.swift in Sources */,
+				1407AC8E24B4A66800A2D2D9 /* StorageError.swift in Sources */,
+				1407AC7524B497CB00A2D2D9 /* RateCurrency.swift in Sources */,
 				14C3B7A024B36061004B6959 /* URLSessionProtocol.swift in Sources */,
 				14C3B75424B346CF004B6959 /* SceneDelegate.swift in Sources */,
 				14C3B76E24B34D22004B6959 /* R.generated.swift in Sources */,

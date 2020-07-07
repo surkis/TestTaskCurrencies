@@ -189,16 +189,20 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 5 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 7 localization keys.
     struct localizable {
       /// Value: Data not parsing by request.
       static let error_api_data_not_parsing = Rswift.StringResource(key: "error_api_data_not_parsing", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Error
       static let alert_error_title = Rswift.StringResource(key: "alert_error_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Latest rate currencies
+      static let main_page_title = Rswift.StringResource(key: "main_page_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Network request error - no other information.
       static let error_api_network_request = Rswift.StringResource(key: "error_api_network_request", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Not found data by request.
       static let error_api_data_not_found = Rswift.StringResource(key: "error_api_data_not_found", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Not found data in storage.
+      static let errorStorageDataNotFound = Rswift.StringResource(key: "error-storage-data-not-found", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: OK
       static let alert_button_ok = Rswift.StringResource(key: "alert_button_ok", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
 
@@ -228,6 +232,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("alert_error_title", bundle: bundle, comment: "")
       }
 
+      /// Value: Latest rate currencies
+      static func main_page_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("main_page_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "main_page_title"
+        }
+
+        return NSLocalizedString("main_page_title", bundle: bundle, comment: "")
+      }
+
       /// Value: Network request error - no other information.
       static func error_api_network_request(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -252,6 +269,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("error_api_data_not_found", bundle: bundle, comment: "")
+      }
+
+      /// Value: Not found data in storage.
+      static func errorStorageDataNotFound(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("error-storage-data-not-found", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "error-storage-data-not-found"
+        }
+
+        return NSLocalizedString("error-storage-data-not-found", bundle: bundle, comment: "")
       }
 
       /// Value: OK

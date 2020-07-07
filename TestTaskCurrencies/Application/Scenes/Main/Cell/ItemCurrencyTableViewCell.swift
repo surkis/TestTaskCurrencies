@@ -14,9 +14,10 @@ class ItemCurrencyTableViewCell: BaseViewTableViewCell, ItemCurrencyView {
     }
     
     override func setup(viewModel: ModelViewProtocol) {
-        guard let viewModel = viewModel as? ItemCurrencyView else {
+        guard let model = viewModel as? ItemCurrencyModelView else {
             return
         }
-        
+        textLabel?.text = model.name
+        detailTextLabel?.text = model.value
     }
 }

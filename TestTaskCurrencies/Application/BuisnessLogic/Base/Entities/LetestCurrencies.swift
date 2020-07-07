@@ -2,6 +2,7 @@ import Foundation
 
 struct LetestCurrencies {
     var base: String
-    var rates: [String: Double]
+    var rates: [RateCurrency]
     var createdAt: Date = Date()
 }
+

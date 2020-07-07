@@ -7,6 +7,7 @@ target 'TestTaskCurrencies' do
     
     pod 'SwiftLint'
     pod 'R.swift'
+    pod 'RealmSwift'
     
 end
 

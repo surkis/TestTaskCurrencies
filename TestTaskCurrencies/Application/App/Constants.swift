@@ -8,5 +8,7 @@ struct Constants {
     
     enum Value {
         static var baseCurrency: String = "USD"
+        static var appName: String = "TestTaskCurrencies"
+        static var minTimeUpdate: TimeInterval = 10 * 60
     }
 }

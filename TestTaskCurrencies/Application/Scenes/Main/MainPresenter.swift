@@ -15,16 +15,20 @@ class MainPresenterImpl: MainPresenter {
         return Constants.Value.baseCurrency
     }
     private var letestCurrencies: LetestCurrencies?
+    private var formatManager: CurrencyFormatProtocol
     
     init(router: MainViewRouter,
          view: MainView,
-         gateway: LetestCurrrenciesGateway) {
+         gateway: LetestCurrrenciesGateway,
+         formatManager: CurrencyFormatProtocol) {
         self.router = router
         self.view = view
         self.gateway = gateway
+        self.formatManager = formatManager
     }
     
     func needLoadContent() {
+        view?.displayPage(title: R.string.localizable.main_page_title())
         loadCurrencies()
     }
     
@@ -34,6 +38,9 @@ class MainPresenterImpl: MainPresenter {
             switch result {
             case let .success(item):
                 self.letestCurrencies = item
+                DispatchQueue.main.async {
+                    self.view?.displayUpdateContent()
+                }
             case let .failure(error):
                 DispatchQueue.main.async {
                     self.view?.displayError(messsage: error.localizedDescription)
@@ -47,10 +54,16 @@ class MainPresenterImpl: MainPresenter {
     }
     
     func numberOfRows(section: Int) -> Int {
-        return 0
+        return letestCurrencies?.rates.count ?? 0
     }
     
     func configure(cellView: BaseViewModelCellType, for indexPath: IndexPath) {
+        guard let rates = letestCurrencies?.rates,
+            rates.count > indexPath.row else { return }
         
+        let item = rates[indexPath.row]
+        let value = formatManager.getFormattedPrice(price: item.value, currencyCode: baseCurrencyCode)
+        let viewModel = ItemCurrencyModelView(name: item.name, value: value)
+        cellView.setup(viewModel: viewModel)
     }
 }

@@ -8,7 +8,8 @@ struct ApiLetestCurrenciesModel: Decodable {
 extension ApiLetestCurrenciesModel: DomainConvertible {
     
     func asDomain() -> LetestCurrencies {
+        let rateItems = rates.compactMap({(key,value) in return RateCurrency(name: key, value: value)})
         return LetestCurrencies(base: base,
-                                rates: rates)
+                                rates: rateItems)
     }
 }
