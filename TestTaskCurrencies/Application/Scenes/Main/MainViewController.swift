@@ -11,7 +11,7 @@ class MainViewController: UIViewController, MainView {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: properties
-    var presenter: MainPresenter!
+    private var presenter: MainPresenter!
     
     // MARK: life-cycle
     override func viewDidLoad() {
@@ -59,5 +59,9 @@ extension MainViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: R.nib.itemCurrencyTableViewCell, for: indexPath)!
         presenter.configure(cellView: cell, for: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelectRow(at: indexPath)
     }
 }

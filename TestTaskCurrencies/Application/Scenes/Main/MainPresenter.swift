@@ -5,6 +5,7 @@ protocol MainPresenter: PresenterProtocol {
     func numberOfSections() -> Int
     func numberOfRows(section: Int) -> Int
     func configure(cellView: BaseViewModelCellType, for indexPath: IndexPath)
+    func didSelectRow(at indexPath: IndexPath)
 }
 
 class MainPresenterImpl: MainPresenter {
@@ -65,5 +66,12 @@ class MainPresenterImpl: MainPresenter {
         let value = formatManager.getFormattedPrice(price: item.value, currencyCode: baseCurrencyCode)
         let viewModel = ItemCurrencyModelView(name: item.name, value: value)
         cellView.setup(viewModel: viewModel)
+    }
+    
+    func didSelectRow(at indexPath: IndexPath) {
+        guard let rates = letestCurrencies?.rates,
+            rates.count > indexPath.row else { return }
+        let item = rates[indexPath.row]
+        router.showDetailRate(currency: item.name)
     }
 }

@@ -21,9 +21,8 @@ class StorageLetestCurrenciesGatewayImpl: StorageLetestCurrenciesGateway {
         repository.get(by: model.base) { [weak self] (result) in
             guard let `self` = self else { return }
             if let item = try? result.get() {
-                self.repository.delete(entity: item) { (_) in
-                    self.update(model, completion: completion)
-                }
+                self.repository.delete(entity: item) { (_) in }
+                self.update(model, completion: completion)
             } else {
                 self.update(model, completion: completion)
             }
@@ -31,6 +30,6 @@ class StorageLetestCurrenciesGatewayImpl: StorageLetestCurrenciesGateway {
     }
     
     private func update(_ model: LetestCurrencies, completion: @escaping (Result<Void, Error>) -> Void) {
-        repository.save(entity: model, update: true, completion: completion)
+        repository.save(entity: model, update: false, completion: completion)
     }
 }

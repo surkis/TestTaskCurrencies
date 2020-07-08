@@ -10,5 +10,6 @@ struct Constants {
         static var baseCurrency: String = "USD"
         static var appName: String = "TestTaskCurrencies"
         static var minTimeUpdate: TimeInterval = 10 * 60
+        static var historicalDays: Int = -7
     }
 }

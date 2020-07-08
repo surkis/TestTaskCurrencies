@@ -5,4 +5,3 @@ struct LetestCurrencies {
     var rates: [RateCurrency]
     var createdAt: Date = Date()
 }
-

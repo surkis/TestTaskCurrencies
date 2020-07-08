@@ -1,7 +1,7 @@
 import Foundation
 
 protocol MainViewRouter {
-    
+    func showDetailRate(currency: String)
 }
 
 class MainViewRouterImpl: MainViewRouter {
@@ -10,5 +10,11 @@ class MainViewRouterImpl: MainViewRouter {
     
     init(viewController: MainViewController) {
         self.viewController = viewController
+    }
+    
+    func showDetailRate(currency: String) {
+        let configure = DetailConfiguratorImpl(selectCurrency: currency)
+        let vc = DetailViewController.make(configure: configure)
+        self.viewController?.navigationController?.pushViewController(vc, animated: true)
     }
 }

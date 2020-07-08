@@ -21,6 +21,9 @@ where ObjectType == ObjectType.StorageType.DomainType, ObjectType.StorageType: O
             isShowFile = true
             let url = configuration.fileURL?.absoluteString ?? ""
             print("Realm file 📁 url: \(url)")
+            if let key = configuration.encryptionKey, let ketStr = String(bytes: key, encoding: .utf8) {
+               print("Configuration key: ", ketStr)
+            }
         }
         #endif
     }
