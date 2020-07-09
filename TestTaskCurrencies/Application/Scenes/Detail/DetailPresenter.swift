@@ -41,6 +41,7 @@ class DetailPresenterImpl: DetailPresenter {
                                            startDate: startDate,
                                            endDate: endDate,
                                            symbol: selectCurrency)
+        self.view?.displayLoading(isShow: true)
         loadGateway.laod(by: model) { [weak self] (result) in
             guard let `self` = self else { return }
             switch result {
@@ -49,6 +50,7 @@ class DetailPresenterImpl: DetailPresenter {
                 self.presentCharts()
             case let .failure(error):
                 DispatchQueue.main.async {
+                    self.view?.displayLoading(isShow: false)
                     self.view?.displayError(message: error.localizedDescription)
                 }
             }
@@ -73,7 +75,11 @@ class DetailPresenterImpl: DetailPresenter {
                                                            dateFormatter.string(from: minDate),
                                                            dateFormatter.string(from: maxDate))
         )
-        view?.displayUpdateContent(model: model)
+        
+        DispatchQueue.main.async {
+            self.view?.displayLoading(isShow: false)
+            self.view?.displayUpdateContent(model: model)
+        }
     }
     
     private func presetExchangeMessage() {
@@ -85,7 +91,10 @@ class DetailPresenterImpl: DetailPresenter {
                 self?.view?.closeView()
             })
         ])
-        self.view?.displayAlert(model)
+        DispatchQueue.main.async {
+            self.view?.displayLoading(isShow: false)
+            self.view?.displayAlert(model)
+        }
     }
     
     func getYLineLabel(by value: Double) -> String {

@@ -34,16 +34,19 @@ class MainPresenterImpl: MainPresenter {
     }
     
     private func loadCurrencies() {
+        view?.displayLoading(isShow: true)
         gateway.laodLetest(by: baseCurrencyCode) { [weak self] (result) in
             guard let `self` = self else { return }
             switch result {
             case let .success(item):
                 self.letestCurrencies = item
                 DispatchQueue.main.async {
+                    self.view?.displayLoading(isShow: false)
                     self.view?.displayUpdateContent()
                 }
             case let .failure(error):
                 DispatchQueue.main.async {
+                    self.view?.displayLoading(isShow: false)
                     self.view?.displayError(message: error.localizedDescription)
                 }
             }

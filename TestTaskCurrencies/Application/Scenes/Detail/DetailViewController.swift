@@ -1,7 +1,7 @@
 import UIKit
 import Charts
 
-protocol DetailView: BasicView, ErrorAlertViewProtocol {
+protocol DetailView: BasicView, ErrorAlertViewProtocol, NVIndicatorViewProtocol {
     func displayPage(title: String)
     func displayUpdateContent(model: ChartCurrencyModelView)
     func closeView()

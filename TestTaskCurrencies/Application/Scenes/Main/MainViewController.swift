@@ -1,6 +1,6 @@
 import UIKit
 
-protocol MainView: BasicView, ErrorAlertViewProtocol {
+protocol MainView: BasicView, ErrorAlertViewProtocol, NVIndicatorViewProtocol {
     func displayUpdateContent()
     func displayPage(title: String)
 }

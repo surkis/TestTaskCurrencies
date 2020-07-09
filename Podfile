@@ -9,6 +9,7 @@ target 'TestTaskCurrencies' do
     pod 'R.swift'
     pod 'RealmSwift'
     pod 'Charts'
+    pod 'NVActivityIndicatorView', '4.8.0'
     
 end
 
