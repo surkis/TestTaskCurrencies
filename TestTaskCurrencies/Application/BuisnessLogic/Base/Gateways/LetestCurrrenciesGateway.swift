@@ -1,7 +1,8 @@
 import Foundation
 
 protocol LetestCurrrenciesGateway {
-    func laodLetest(by baseCurrency: String, completion: @escaping (Result<LetestCurrencies, Error>) -> Void)
+    func laodLetest(by baseCurrency: String, isRefresh: Bool,
+                    completion: @escaping (Result<LetestCurrencies, Error>) -> Void)
 }
 
 class LetestCurrrenciesGatewayImpl: LetestCurrrenciesGateway {
@@ -13,7 +14,14 @@ class LetestCurrrenciesGatewayImpl: LetestCurrrenciesGateway {
         self.storage = storage
     }
     
-    func laodLetest(by baseCurrency: String, completion: @escaping (Result<LetestCurrencies, Error>) -> Void) {
+    func laodLetest(by baseCurrency: String, isRefresh: Bool,
+                    completion: @escaping (Result<LetestCurrencies, Error>) -> Void) {
+        
+        guard !isRefresh else {
+            self.apiLoad(baseCurrency: baseCurrency, completion: completion)
+            return
+        }
+        
         storage.laodLetest(by: baseCurrency) { [weak self] (result) in
             guard let `self` = self else { return }
             if let item = try? result.get() {

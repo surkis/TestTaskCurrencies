@@ -33,7 +33,6 @@ class DetailViewController: UIViewController, DetailView {
         legend.drawInside = false
         legend.font = UIFont.systemFont(ofSize: 14)
 
-        
         let xAxis = viewChart.xAxis
         xAxis.labelPosition = .bottom
         xAxis.valueFormatter = self
@@ -52,7 +51,6 @@ class DetailViewController: UIViewController, DetailView {
         leftAxis.minWidth = 30
         
         viewChart.data = nil
-        viewChart.animate(yAxisDuration: 1.0, easingOption: .easeOutQuint)
     }
     
     // MARK: make method
@@ -91,6 +89,7 @@ class DetailViewController: UIViewController, DetailView {
         set1.fill = Fill(linearGradient: gradient, angle: 90)
         set1.drawFilledEnabled = true
         viewChart.data = LineChartData(dataSet: set1)
+        viewChart.animate(yAxisDuration: 1.0, easingOption: .easeOutQuint)
     }
     
     func closeView() {

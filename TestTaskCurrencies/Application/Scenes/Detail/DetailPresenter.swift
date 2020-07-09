@@ -76,7 +76,7 @@ class DetailPresenterImpl: DetailPresenter {
                                                            dateFormatter.string(from: maxDate))
         )
         
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
             self.view?.displayLoading(isShow: false)
             self.view?.displayUpdateContent(model: model)
         }

@@ -11,6 +11,7 @@ class MainViewController: UIViewController, MainView {
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: properties
+    private let refreshControl = UIRefreshControl()
     private var presenter: MainPresenter!
     
     // MARK: life-cycle
@@ -22,9 +23,15 @@ class MainViewController: UIViewController, MainView {
     
     // MARK: setup ui
     private func setupUIContent() {
+        tableView.refreshControl = refreshControl
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(R.nib.itemCurrencyTableViewCell)
+        refreshControl.addTarget(self, action: #selector(refreshData), for: .valueChanged)
+    }
+    
+    @objc private func refreshData(_ sender: Any) {
+        presenter.refreshData()
     }
     
     // MARK: make method
@@ -37,6 +44,7 @@ class MainViewController: UIViewController, MainView {
     // MARK: display methods
     func displayUpdateContent() {
         tableView.reloadData()
+        refreshControl.endRefreshing()
     }
     
     func displayPage(title: String) {

@@ -2,6 +2,7 @@ import Foundation
 
 protocol MainPresenter: PresenterProtocol {
     var router: MainViewRouter { get }
+    func refreshData()
     func numberOfSections() -> Int
     func numberOfRows(section: Int) -> Int
     func configure(cellView: BaseViewModelCellType, for indexPath: IndexPath)
@@ -33,14 +34,14 @@ class MainPresenterImpl: MainPresenter {
         loadCurrencies()
     }
     
-    private func loadCurrencies() {
+    private func loadCurrencies(isRefresh: Bool = false) {
         view?.displayLoading(isShow: true)
-        gateway.laodLetest(by: baseCurrencyCode) { [weak self] (result) in
+        gateway.laodLetest(by: baseCurrencyCode, isRefresh: isRefresh) { [weak self] (result) in
             guard let `self` = self else { return }
             switch result {
             case let .success(item):
                 self.letestCurrencies = item
-                DispatchQueue.main.async {
+                DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
                     self.view?.displayLoading(isShow: false)
                     self.view?.displayUpdateContent()
                 }
@@ -51,6 +52,10 @@ class MainPresenterImpl: MainPresenter {
                 }
             }
         }
+    }
+    
+    func refreshData() {
+        loadCurrencies(isRefresh: true)
     }
     
     func numberOfSections() -> Int {
