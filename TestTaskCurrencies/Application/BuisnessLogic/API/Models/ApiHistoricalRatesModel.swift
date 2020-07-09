@@ -18,7 +18,15 @@ struct ApiHistoricalRatesModel: Decodable {
         base = try values.decode(String.self, forKey: .base)
         startDate = try values.decode(Date.self, forKey: .startDate)
         endDate = try values.decode(Date.self, forKey: .endDate)
-        rates = try values.decode([ApiRateCurrencyModel].self, forKey: .rates)
+        let ratesDic = try values.decode([String: [String: Double]].self, forKey: .rates)
+        
+        let formatter = DateFormatter.dateFormatterYYYYMMdd
+        rates = try ratesDic.compactMap({ (key, values) in
+            if let date = formatter.date(from: key) {
+                return try ApiRateCurrencyModel(date: date, values: values)
+            }
+            return nil
+        })
     }
 }
 

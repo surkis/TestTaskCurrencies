@@ -32,6 +32,9 @@
 		1407ACB224B5FC8F00A2D2D9 /* RateCurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407ACB124B5FC8F00A2D2D9 /* RateCurrency.swift */; };
 		1407ACB424B5FCD600A2D2D9 /* ApiRateCurrencyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407ACB324B5FCD600A2D2D9 /* ApiRateCurrencyModel.swift */; };
 		1407ACB624B5FF3100A2D2D9 /* HistoricalRatesGateway.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407ACB524B5FF3100A2D2D9 /* HistoricalRatesGateway.swift */; };
+		1407ACB824B7141200A2D2D9 /* Formatter+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407ACB724B7141200A2D2D9 /* Formatter+Extension.swift */; };
+		1407ACBC24B752E100A2D2D9 /* AlertViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407ACBB24B752E100A2D2D9 /* AlertViewProtocol.swift */; };
+		1407ACBE24B7531300A2D2D9 /* AlertModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1407ACBD24B7531300A2D2D9 /* AlertModelView.swift */; };
 		14C3B75224B346CF004B6959 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3B75124B346CF004B6959 /* AppDelegate.swift */; };
 		14C3B75424B346CF004B6959 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14C3B75324B346CF004B6959 /* SceneDelegate.swift */; };
 		14C3B75B24B346D5004B6959 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14C3B75A24B346D5004B6959 /* Assets.xcassets */; };
@@ -96,6 +99,9 @@
 		1407ACB124B5FC8F00A2D2D9 /* RateCurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RateCurrency.swift; sourceTree = "<group>"; };
 		1407ACB324B5FCD600A2D2D9 /* ApiRateCurrencyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRateCurrencyModel.swift; sourceTree = "<group>"; };
 		1407ACB524B5FF3100A2D2D9 /* HistoricalRatesGateway.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoricalRatesGateway.swift; sourceTree = "<group>"; };
+		1407ACB724B7141200A2D2D9 /* Formatter+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Formatter+Extension.swift"; sourceTree = "<group>"; };
+		1407ACBB24B752E100A2D2D9 /* AlertViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewProtocol.swift; sourceTree = "<group>"; };
+		1407ACBD24B7531300A2D2D9 /* AlertModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertModelView.swift; sourceTree = "<group>"; };
 		14C3B74E24B346CF004B6959 /* TestTaskCurrencies.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestTaskCurrencies.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14C3B75124B346CF004B6959 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14C3B75324B346CF004B6959 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -164,6 +170,7 @@
 			children = (
 				1407AC7A24B49CEE00A2D2D9 /* Double+Extension.swift */,
 				1407ACA524B5F0CF00A2D2D9 /* Date+Extension.swift */,
+				1407ACB724B7141200A2D2D9 /* Formatter+Extension.swift */,
 			);
 			path = Standart;
 			sourceTree = "<group>";
@@ -366,6 +373,7 @@
 			isa = PBXGroup;
 			children = (
 				14C3B77D24B3550A004B6959 /* ErrorAlertViewProtocol.swift */,
+				1407ACBB24B752E100A2D2D9 /* AlertViewProtocol.swift */,
 				14C3B79024B357B7004B6959 /* ConfiguratorProtocol.swift */,
 				14C3B79224B357D4004B6959 /* PresenterProtocol.swift */,
 				14C3B79724B358B8004B6959 /* BasicView.swift */,
@@ -472,6 +480,7 @@
 			children = (
 				14C3B7D424B373AD004B6959 /* ItemCurrencyModelView.swift */,
 				1407ACA324B5EEDC00A2D2D9 /* ChartCurrencyModelView.swift */,
+				1407ACBD24B7531300A2D2D9 /* AlertModelView.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -661,7 +670,9 @@
 				14C3B77E24B3550A004B6959 /* ErrorAlertViewProtocol.swift in Sources */,
 				1407AC7E24B49D7600A2D2D9 /* CurrencyFormatManager.swift in Sources */,
 				14C3B7C924B36E05004B6959 /* LetestCurrencies.swift in Sources */,
+				1407ACBC24B752E100A2D2D9 /* AlertViewProtocol.swift in Sources */,
 				14C3B79824B358B8004B6959 /* BasicView.swift in Sources */,
+				1407ACB824B7141200A2D2D9 /* Formatter+Extension.swift in Sources */,
 				14C3B78924B356A8004B6959 /* MainConfigurator.swift in Sources */,
 				1407AC9724B4A9E600A2D2D9 /* StorageLetestCurrencies.swift in Sources */,
 				14C3B79A24B35CB1004B6959 /* MainViewRouter.swift in Sources */,
@@ -685,6 +696,7 @@
 				1407ACA424B5EEDC00A2D2D9 /* ChartCurrencyModelView.swift in Sources */,
 				1407AC8624B4A4D200A2D2D9 /* RealmDefaultConfigProtocol.swift in Sources */,
 				1407ACB224B5FC8F00A2D2D9 /* RateCurrency.swift in Sources */,
+				1407ACBE24B7531300A2D2D9 /* AlertModelView.swift in Sources */,
 				1407ACA824B5F19300A2D2D9 /* HistoricalRatesApiRequest.swift in Sources */,
 				1407ACA624B5F0CF00A2D2D9 /* Date+Extension.swift in Sources */,
 				14C3B7A424B360AE004B6959 /* ApiRequest.swift in Sources */,

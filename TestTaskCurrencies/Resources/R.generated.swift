@@ -203,8 +203,12 @@ struct R: Rswift.Validatable {
 
   /// This `R.string` struct is generated, and contains static references to 1 localization tables.
   struct string {
-    /// This `R.string.localizable` struct is generated, and contains static references to 7 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 11 localization keys.
     struct localizable {
+      /// Value: %s historical rates
+      static let detail_page_title = Rswift.StringResource(key: "detail_page_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: %s rates from %s to %s
+      static let detail_chart_label = Rswift.StringResource(key: "detail_chart_label", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Data not parsing by request.
       static let error_api_data_not_parsing = Rswift.StringResource(key: "error_api_data_not_parsing", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Error
@@ -213,12 +217,46 @@ struct R: Rswift.Validatable {
       static let main_page_title = Rswift.StringResource(key: "main_page_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Network request error - no other information.
       static let error_api_network_request = Rswift.StringResource(key: "error_api_network_request", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: No exchange rate data is available for the selected currency.
+      static let detail_exchange_rate_alert_message = Rswift.StringResource(key: "detail_exchange_rate_alert_message", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Not found data by request.
       static let error_api_data_not_found = Rswift.StringResource(key: "error_api_data_not_found", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: Not found data in storage.
       static let errorStorageDataNotFound = Rswift.StringResource(key: "error-storage-data-not-found", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
       /// Value: OK
       static let alert_button_ok = Rswift.StringResource(key: "alert_button_ok", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+      /// Value: Warning!
+      static let detail_exchange_rate_alert_title = Rswift.StringResource(key: "detail_exchange_rate_alert_title", tableName: "Localizable", bundle: R.hostingBundle, locales: [], comment: nil)
+
+      /// Value: %s historical rates
+      static func detail_page_title(_ value1: UnsafePointer<CChar>, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("detail_page_title", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "detail_page_title"
+        }
+
+        let format = NSLocalizedString("detail_page_title", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1)
+      }
+
+      /// Value: %s rates from %s to %s
+      static func detail_chart_label(_ value1: UnsafePointer<CChar>, _ value2: UnsafePointer<CChar>, _ value3: UnsafePointer<CChar>, preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          let format = NSLocalizedString("detail_chart_label", bundle: hostingBundle, comment: "")
+          return String(format: format, locale: applicationLocale, value1, value2, value3)
+        }
+
+        guard let (locale, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "detail_chart_label"
+        }
+
+        let format = NSLocalizedString("detail_chart_label", bundle: bundle, comment: "")
+        return String(format: format, locale: locale, value1, value2, value3)
+      }
 
       /// Value: Data not parsing by request.
       static func error_api_data_not_parsing(preferredLanguages: [String]? = nil) -> String {
@@ -272,6 +310,19 @@ struct R: Rswift.Validatable {
         return NSLocalizedString("error_api_network_request", bundle: bundle, comment: "")
       }
 
+      /// Value: No exchange rate data is available for the selected currency.
+      static func detail_exchange_rate_alert_message(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("detail_exchange_rate_alert_message", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "detail_exchange_rate_alert_message"
+        }
+
+        return NSLocalizedString("detail_exchange_rate_alert_message", bundle: bundle, comment: "")
+      }
+
       /// Value: Not found data by request.
       static func error_api_data_not_found(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
@@ -309,6 +360,19 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("alert_button_ok", bundle: bundle, comment: "")
+      }
+
+      /// Value: Warning!
+      static func detail_exchange_rate_alert_title(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("detail_exchange_rate_alert_title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "detail_exchange_rate_alert_title"
+        }
+
+        return NSLocalizedString("detail_exchange_rate_alert_title", bundle: bundle, comment: "")
       }
 
       fileprivate init() {}

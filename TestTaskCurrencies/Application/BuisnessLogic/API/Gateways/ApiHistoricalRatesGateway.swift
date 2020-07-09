@@ -19,7 +19,7 @@ class ApiHistoricalRatesGatewayImpl: ApiHistoricalRatesGateway {
                                                  endDate: model.endDate,
                                                  symbol: model.symbol)
         apiClient.execute(request: reuquest,
-                          decoder: ApiHistoricalJSONDecoder<ApiHistoricalRatesModel>.self) { (result) in
+                          decoder: ApiJSONDecoder<ApiHistoricalRatesModel>(dateFormatter: .dateFormatterYYYYMMdd)) { (result) in
                             switch result {
                             case let .success(model):
                                 completion(.success(model.asDomain()))

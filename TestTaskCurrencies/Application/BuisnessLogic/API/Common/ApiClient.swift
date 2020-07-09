@@ -2,7 +2,7 @@ import Foundation
 
 protocol ApiClient {
     func execute<Decoder: ApiDecodable>(request: ApiRequest,
-                                        decoder: Decoder.Type,
+                                        decoder: Decoder,
                                         completionHandler: @escaping (_ result: Result<Decoder.ValueType, Error>) -> Void)
 }
 
@@ -28,7 +28,7 @@ class ApiClientImpl: ApiClient {
     }
     
     func execute<Decoder: ApiDecodable>(request: ApiRequest,
-                                        decoder: Decoder.Type,
+                                        decoder: Decoder,
                                         completionHandler: @escaping (_ result: Result<Decoder.ValueType, Error>) -> Void) {
         let dataTask = urlSession.dataTask(with: request.urlRequest) { (data, response, error) in
             
@@ -46,7 +46,7 @@ class ApiClientImpl: ApiClient {
                 return
             }
             do {
-                let apiResponse = try ApiResponse<Decoder>(data: data, urlResponse: urlResponse)
+                let apiResponse = try ApiResponse(data: data, urlResponse: urlResponse, decoder: decoder)
                 completionHandler(.success(apiResponse.entity))
             } catch {
                 completionHandler(.failure(error))

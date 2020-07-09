@@ -44,7 +44,7 @@ class MainPresenterImpl: MainPresenter {
                 }
             case let .failure(error):
                 DispatchQueue.main.async {
-                    self.view?.displayError(messsage: error.localizedDescription)
+                    self.view?.displayError(message: error.localizedDescription)
                 }
             }
         }

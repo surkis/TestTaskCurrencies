@@ -14,8 +14,10 @@ class DetailConfiguratorImpl: DetailConfigurator {
     
     func configure(view: DetailViewController) -> DetailPresenter {
         let loadGateway = HistoricalRatesGatewayImpl(api: ApiHistoricalRatesGatewayImpl())
+        let manager = CurrencyFormatManagar()
         return DetailPresenterImpl(selectCurrency: selectCurrency,
                                    view: view,
-                                   loadGateway: loadGateway)
+                                   loadGateway: loadGateway,
+                                   manager: manager)
     }
 }

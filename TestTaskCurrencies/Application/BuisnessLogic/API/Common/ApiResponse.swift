@@ -5,14 +5,14 @@ struct ApiResponse<Decoder: ApiDecodable> {
     let urlResponse: URLResponse
     let data: Data?
     
-    init(data: Data?, urlResponse: URLResponse) throws {
+    init(data: Data?, urlResponse: URLResponse, decoder: Decoder) throws {
         self.data = data
         self.urlResponse = urlResponse
         guard let data = data else {
             throw ApiError.dataNotFound
         }
         do {
-            self.entity = try Decoder.decode(data: data)
+            self.entity = try decoder.decode(data: data)
         } catch {
             throw ApiParseError(error: error, urlResponse: urlResponse, data: data)
         }

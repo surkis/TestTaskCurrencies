@@ -2,27 +2,26 @@ import Foundation
 
 protocol ApiDecodable {
     associatedtype ValueType
-    static func decode(data: Data) throws -> ValueType
+    func decode(data: Data) throws -> ValueType
 }
 
 class ApiJSONDecoder<ValueType>: ApiDecodable where ValueType: Decodable {
     
-    static func decode(data: Data) throws -> ValueType {
-        return try JSONDecoder().decode(ValueType.self, from: data)
-    }
-}
-
-class ApiHistoricalJSONDecoder<ValueType>: ApiDecodable where ValueType: Decodable {
-
-    static func decode(data: Data) throws -> ValueType {
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted(dateFormatter)
-        return try decoder.decode(ValueType.self, from: data)
+    private var dateFormatter: DateFormatter?
+    
+    init(dateFormatter: DateFormatter? = nil) {
+        self.dateFormatter = dateFormatter
     }
     
-    static var dateFormatter: DateFormatter {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd"
-        return formatter
+    private var decoder: JSONDecoder {
+        let decoder = JSONDecoder()
+        if let formatter = dateFormatter {
+            decoder.dateDecodingStrategy = .formatted(formatter)
+        }
+        return decoder
+    }
+    
+    func decode(data: Data) throws -> ValueType {
+        return try decoder.decode(ValueType.self, from: data)
     }
 }

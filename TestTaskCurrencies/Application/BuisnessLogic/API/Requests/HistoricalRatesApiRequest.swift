@@ -31,7 +31,7 @@ struct HistoricalRatesApiRequest: ApiRequest {
     
     private let dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-dd-MM"
+        formatter.dateFormat = "yyyy-MM-dd"
         return formatter
     }()
 }

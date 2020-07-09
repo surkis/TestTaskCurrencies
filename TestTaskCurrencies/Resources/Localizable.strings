@@ -12,3 +12,9 @@
 
 // MARK: Storage Error
 "error-storage-data-not-found" = "Not found data in storage.";
+
+// MARK: Detail
+"detail_page_title" = "%s historical rates";
+"detail_chart_label" = "%s rates from %s to %s";
+"detail_exchange_rate_alert_title" = "Warning!";
+"detail_exchange_rate_alert_message" = "No exchange rate data is available for the selected currency.";
